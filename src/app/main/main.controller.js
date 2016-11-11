@@ -6,7 +6,7 @@
   .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController(TestCenterService) {
+  function MainController(TestCenterService, $translate) {
     var vm = this;
 
     vm.searchObj = {};
@@ -19,6 +19,10 @@
         vm.testCenters =  testCenters;   
       });
     }
+
+    vm.changeLanguage = function (key) {
+      $translate.use(key);
+    };
     
   }
 })();
