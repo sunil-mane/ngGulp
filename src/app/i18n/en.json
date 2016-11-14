@@ -11,6 +11,11 @@
 
 	},
 	"CENTER_LIST":{
+		"LEFT_MENU":{
+			"TITLE":"Online Practice Test",
+			"SEARCH":"Search",
+			"EXAM_OVERVIEW":"Examination Overview"
+		},
 		"SELECT_EXAM":"Please select the Exam",
 		"THIS_WEEK":"This Week",
 		"THIS_MONTH":"This Month",

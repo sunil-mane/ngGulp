@@ -11,6 +11,11 @@
 
 	},
 	"CENTER_LIST":{
+		"LEFT_MENU":{
+			"TITLE":"Prueba de práctica en línea",
+			"SEARCH":"Buscar",
+			"EXAM_OVERVIEW":"Descripción del Examen"
+		},
 		"SELECT_EXAM":"Por favor seleccione el examen",
 		"THIS_WEEK":"Esta semana",
 		"THIS_MONTH":"Este mes",
