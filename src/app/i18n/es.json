@@ -1,3 +1,19 @@
 {
-	"TITLE": "Hello in Spanish"
+	"LOGIN":{},
+	"HOME":{
+		"TITLE":"Exámenes PSI en línea",
+		"HOME":"Casa",
+		"NEWS":"PSI Noticias",
+		"BOOKSTORE":"PSI Librería",
+		"ABOUT":"Acerca de PSI",
+		"CONTACT_US":"Contáctenos",
+		"SIGN_IN":"Registrarse"
+
+	},
+	"CENTER_LIST":{
+		"SELECT_EXAM":"Por favor seleccione el examen",
+		"THIS_WEEK":"Esta semana",
+		"THIS_MONTH":"Este mes",
+		"CUSTOM":"Personalizado"
+	}
 }

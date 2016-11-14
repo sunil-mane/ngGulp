@@ -1,3 +1,19 @@
 {
-	"TITLE": "Hello"
+	"LOGIN":{},
+	"HOME":{
+		"TITLE":"PSI Exams Online",
+		"HOME":"Home",
+		"NEWS":"PSI News",
+		"BOOKSTORE":"PSI Bookstore",
+		"ABOUT":"About PSI",
+		"CONTACT_US":"Contact Us",
+		"SIGN_IN":"Sign In"
+
+	},
+	"CENTER_LIST":{
+		"SELECT_EXAM":"Please select the Exam",
+		"THIS_WEEK":"This Week",
+		"THIS_MONTH":"This Month",
+		"CUSTOM":"Custom"
+	}
 }

@@ -1,12 +1,14 @@
 (function() {
 	'use strict';
 
-	angular.module('psi').component('languageList', {
-		templateUrl : 'app/components/i18n/translation.component.html',
-		controllerAs : 'vm',
-		controller : controller
+	angular
+		.module('psi')
+		.component('languageList', {
+			templateUrl : 'app/components/i18n/translation.component.html',
+			controllerAs : 'vm',
+			controller : controller
 
-	});
+		});
 
 	/** @ngInject */
 	function controller($translate) {

@@ -2,7 +2,7 @@
 
   <div class="navbar-header">
     <img class="navbar-brand" src="assets/images/psi-small-logo.png">
-    <a class="navbar-brand" href="#">PSI Exams Online</a>
+    <a class="navbar-brand" href="#" translate="HOME.TITLE">PSI Exams Online</a>
   </div>
   <div id="navbar" class="navbar-collapse collapse">
 
@@ -12,27 +12,27 @@
         <language-list></language-list>
       </li>
       <li class="drop">
-        <a href="index.html" style="padding-top: 28px; padding-bottom: 28px;">Home</a>
+        <a href="index.html" style="padding-top: 28px; padding-bottom: 28px;" translate="HOME.HOME">Home</a>
 
       </li>
       <li class="drop">
-        <a href="about.html" style="padding-top: 28px; padding-bottom: 28px;">PSI News</a>
+        <a href="about.html" style="padding-top: 28px; padding-bottom: 28px;" translate="HOME.NEWS">PSI News</a>
 
       </li>
       <li class="drop">
-        <a class="active" href="#" style="padding-top: 28px; padding-bottom: 28px;">PSI Bookstore</a>
+        <a class="active" href="#" style="padding-top: 28px; padding-bottom: 28px;" translate="HOME.BOOKSTORE">PSI Bookstore</a>
         <ul class="dropdown">
 
         </ul>
       </li>
 
       <li class="drop">
-        <a href="blog.html" style="padding-top: 28px; padding-bottom: 28px;">About PSI</a> 
+        <a href="blog.html" style="padding-top: 28px; padding-bottom: 28px;" translate="HOME.ABOUT">About PSI</a> 
       </li>
-      <li><a href="contact.html" style="padding-top: 28px; padding-bottom: 28px;">Contact Us</a></li>
+      <li><a href="contact.html" style="padding-top: 28px; padding-bottom: 28px;" translate="HOME.CONTACT_US">Contact Us</a></li>
 
       <li style="margin-top: 1rem;">
-        <button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#LoginModal">Sign in</button>
+        <button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#LoginModal" translate="HOME.SIGN_IN">Sign in</button>
       </li> 
     </ul>
     <!-- Stat Search -->
@@ -112,7 +112,7 @@
             <div class="col-lg-12">
               <div class="form-group">
               <select class="form-control" ng-model="main.searchObj.testId" ng-change="main.search()">
-                 <option value="" disabled selected style="display: none;">Please select the Exam</option>
+                 <option value="" disabled selected style="display: none;" translate="CENTER_LIST.SELECT_EXAM"></option>
                  <option value="1">Java</option>
                  <option value="2">Angular</option>
                  <option value="3">React</option>
@@ -120,9 +120,9 @@
                </select>
              </div>
              <span class="btn-group" role="group" >
-              <button type="button" class="btn btn-default">This week</button>
-              <button type="button" class="btn btn-default">This Month</button>
-              <button type="button" class="btn btn-default">Custom</button>
+              <button type="button" class="btn btn-default" translate="CENTER_LIST.THIS_WEEK">This week</button>
+              <button type="button" class="btn btn-default" translate="CENTER_LIST.THIS_MONTH">This Month</button>
+              <button type="button" class="btn btn-default" translate="CENTER_LIST.CUSTOM">Custom</button>
             </span>
             <div class="media" ng-repeat="center in main.testCenters">
               <div class="media-left">
