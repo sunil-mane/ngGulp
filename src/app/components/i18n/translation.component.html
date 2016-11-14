@@ -1,5 +1,4 @@
-<ul class="nav navbar-nav navbar-right">
-    <li class="dropdown navbar-user-area" uib-dropdown
+    <span class="dropdown navbar-user-area" uib-dropdown
         is-open="vm.lang.isopen"><a href=""
         class="dropdown-toggle navbar-user-name" uib-dropdown-toggle> {{
             vm.selectLang}} <span class="caret"></span>
@@ -7,5 +6,4 @@
         <ul class="dropdown-menu dropdown-menu-user" role="menu">
             <li ng-repeat="(langKey, label) in vm.langs"><a
                 ng-click="vm.setLang(langKey, $event)" href="">{{label}}</a></li>
-        </ul></li>
-</ul>
+        </ul></span>

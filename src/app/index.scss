@@ -275,9 +275,30 @@ ul.nav.navbar-nav.navbar-right{
   background-color: transparent;
      vertical-align: middle;
     font-size: 15px;
-    
+    margin-right: 0;
 }
-
+.navbar-inverse .navbar-nav > li span.dropdown {
+  display: block;
+}
+.navbar-inverse .navbar-nav > li span.dropdown > a {
+  color: #5aadbb;
+  display: block;
+}
+.navbar-inverse .navbar-nav > li span.dropdown > a:hover,
+.navbar-inverse .navbar-nav > li span.dropdown > a:focus {
+  color: #204d74 !important;
+  text-decoration: none;
+}
+.nav span.open > a,
+.nav span.open > a:hover,
+.nav span.open > a:focus {
+  background-color: transparent;
+  border-color: transparent;
+}
+.navbar-inverse .navbar-nav > li > a,
+.navbar-inverse .navbar-nav > li span.dropdown > a {
+  padding-top: 28px;
+}
 
 .btn-primary {
   color: #fff;
