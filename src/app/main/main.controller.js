@@ -6,7 +6,7 @@
   .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController(TestCenterService, $translate) {
+  function MainController(TestCenterService, $log) {
     var vm = this;
 
     vm.searchObj = {};
@@ -16,12 +16,19 @@
     vm.search = function(){
       vm.testCenters = [];
       TestCenterService.search(vm.searchObj.testId).then(function(testCenters){
-        vm.testCenters =  testCenters;   
+        vm.testCenters =  testCenters;
+        if(angular.isArray(vm.testCenters)){
+          vm.totalItems = vm.testCenters.length;
+        }
+           
       });
     }
 
-    vm.changeLanguage = function (key) {
-      $translate.use(key);
+    vm.itemsPerPage = 2;
+    vm.currentPage = 1;
+    
+    vm.pageChanged = function() {
+      $log.log('Page changed to: ' + vm.currentPage);
     };
     
   }

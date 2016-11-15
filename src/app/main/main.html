@@ -124,7 +124,8 @@
               <button type="button" class="btn btn-default" translate="CENTER_LIST.THIS_MONTH">This Month</button>
               <button type="button" class="btn btn-default" translate="CENTER_LIST.CUSTOM">Custom</button>
             </span>
-            <div class="media" ng-repeat="center in main.testCenters">
+            
+            <div class="media" ng-repeat="center in main.testCenters | limitTo:main.itemsPerPage:main.currentPage">
               <div class="media-left">
                 <a href="#">
 
@@ -138,6 +139,8 @@
               </div>
               <div class="media-right"><button type="submit" class="btn btn-primary"> Book </button></div>
             </div>
+
+            <ul ng-if="main.testCenters" uib-pagination total-items="main.totalItems" ng-model="main.currentPage" ng-change="main.pageChanged()" items-per-page="main.itemsPerPage"></ul>
 
           </div>
         </div>
