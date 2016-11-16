@@ -11,7 +11,7 @@
 		});
 
 	/** @ngInject */
-	function controller($rootScope, $translate, tmhDynamicLocale) {
+	function controller( $translate, tmhDynamicLocale) {
 		var vm = this;
 		//translate
 		vm.lang = {
@@ -30,8 +30,7 @@
 			$translate.use(langKey);
 			vm.lang.isopen = !vm.lang.isopen;
             
-            //broadcasts the language change event available to all controllers listening to it - here main.controller
-            $rootScope.$broadcast('language-changed', {langKey: langKey});
+            tmhDynamicLocale.set(langKey);
 		};
 	}
 

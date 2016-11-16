@@ -6,7 +6,7 @@
   .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController(TestCenterService, $log, $scope, tmhDynamicLocale) {
+  function MainController(TestCenterService, $log) {
     var vm = this;
 
     vm.searchObj = {};
@@ -32,14 +32,7 @@
     };
     
     //initialize date and currency value  
-    $scope.date = new Date();
-    $scope.money = 5000;
-      
-    // below listner listnes to change of language from 
-    //translation.component and updates the language accordingly
-    $scope.$on('language-changed', function(event, args) {
-         tmhDynamicLocale.set(args.langKey);
-    });      
-    
+    vm.date = new Date();
+    vm.money = 5000;
   }
 })();
