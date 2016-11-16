@@ -6,7 +6,7 @@
   .config(config);
 
   /** @ngInject */
-  function config($logProvider, toastrConfig, $translateProvider) {
+  function config($logProvider, toastrConfig, $translateProvider,tmhDynamicLocaleProvider) {
 
 
     // Register a loader for the static files
@@ -35,6 +35,9 @@
     toastrConfig.progressBar = true;
 
     //$httpProvider.defaults.headers.common['Authorization'] = "Basic dXNlcjozNDY4YTljYS00OTg5LTRiN2EtYjk1NS02ZTc2ODNmYTJmZTU=";
+    
+    //override the default path for locale files  
+    tmhDynamicLocaleProvider.localeLocationPattern('app/vendor/angular-locale_{{locale}}.js');
   }
 
 })();

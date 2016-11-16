@@ -94,7 +94,17 @@
             <h7 style="display:block">Exam</h7>
             <h8 style="display:block">AWS Certification</h8>    
         </li>
+         // date and currency filter display according to locale
+        <li> 
+            <h7 >Date : </h7>
+            <span>{{date | date:'longDate'}}</span>    
+        </li>
 
+        <li> 
+          <h7 >Fees : </h7>
+          <span>{{money | currency}}</span>   
+        </li>
+              
       </ul>
 
       </li>

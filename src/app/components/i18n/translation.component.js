@@ -11,7 +11,7 @@
 		});
 
 	/** @ngInject */
-	function controller($translate) {
+	function controller($rootScope, $translate, tmhDynamicLocale) {
 		var vm = this;
 		//translate
 		vm.lang = {
@@ -29,6 +29,9 @@
 			// You can change the language during runtime
 			$translate.use(langKey);
 			vm.lang.isopen = !vm.lang.isopen;
+            
+            //broadcasts the language change event available to all controllers listening to it - here main.controller
+            $rootScope.$broadcast('language-changed', {langKey: langKey});
 		};
 	}
 
