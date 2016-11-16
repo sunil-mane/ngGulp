@@ -13,7 +13,7 @@
         // So, the module will search missing translation tables under the specified urls.
         // Those urls are [prefix][langKey][suffix].
         $translateProvider.useStaticFilesLoader({
-          prefix: 'app/i18n/',
+          prefix: 'i18n/',
           suffix: '.json'
         });
 
@@ -37,7 +37,7 @@
     //$httpProvider.defaults.headers.common['Authorization'] = "Basic dXNlcjozNDY4YTljYS00OTg5LTRiN2EtYjk1NS02ZTc2ODNmYTJmZTU=";
     
     //override the default path for locale files  
-    tmhDynamicLocaleProvider.localeLocationPattern('app/vendor/angular-locale_{{locale}}.js');
+    tmhDynamicLocaleProvider.localeLocationPattern('i18n/angular-locale_{{locale}}.js');
   }
 
 })();

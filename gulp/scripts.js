@@ -21,7 +21,7 @@ gulp.task('scripts', function() {
 function buildScripts() {
   return gulp.src([
   	path.join(conf.paths.src, '/app/**/*.js'),
-  	path.join('!' + conf.paths.src, '/app/vendor/*.js'),
+  	path.join('!' + conf.paths.src, '/i18n/*.js'),
   	])
     .pipe($.eslint())
     .pipe($.eslint.format())

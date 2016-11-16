@@ -98,10 +98,10 @@ gulp.task('vendor', function () {
   });
 
   return gulp.src([
-    path.join(conf.paths.src, '/app/vendor/*.js')
+    path.join(conf.paths.src, '/i18n/*.js')
   ])
     .pipe(fileFilter)
-    .pipe(gulp.dest(path.join(conf.paths.dist, '/app/vendor/')));
+    .pipe(gulp.dest(path.join(conf.paths.dist, '/i18n/')));
 });
 
 gulp.task('clean', function () {
