@@ -36,14 +36,14 @@ gulp.task('html', ['inject', 'partials'], function () {
 
   var htmlFilter = $.filter('*.html', { restore: true });
   var jsFilter = $.filter('**/*.js', { restore: true });
-    var jsFilterFilter = $.filter(['*', '!vendor']); //ignore vendor files for locale
+  //var jsFilterFilter = $.filter(['*', '!vendor']); //ignore vendor files for locale
   var cssFilter = $.filter('**/*.css', { restore: true });
 
   return gulp.src(path.join(conf.paths.tmp, '/serve/*.html'))
     .pipe($.inject(partialsInjectFile, partialsInjectOptions))
     .pipe($.useref())
     .pipe(jsFilter)
-    .pipe(jsFilterFilter)
+    //.pipe(jsFilterFilter)
     .pipe($.sourcemaps.init())
     .pipe($.ngAnnotate())
     .pipe($.uglify({ preserveComments: $.uglifySaveLicense })).on('error', conf.errorHandler('Uglify'))
@@ -92,8 +92,20 @@ gulp.task('other', function () {
     .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
 });
 
+gulp.task('vendor', function () {
+  var fileFilter = $.filter(function (file) {
+    return file.stat.isFile();
+  });
+
+  return gulp.src([
+    path.join(conf.paths.src, '/app/vendor/*.js')
+  ])
+    .pipe(fileFilter)
+    .pipe(gulp.dest(path.join(conf.paths.dist, '/app/vendor/')));
+});
+
 gulp.task('clean', function () {
   return $.del([path.join(conf.paths.dist, '/'), path.join(conf.paths.tmp, '/')]);
 });
 
-gulp.task('build', ['html', 'fonts', 'other']);
+gulp.task('build', ['html', 'fonts', 'other', 'vendor']);
