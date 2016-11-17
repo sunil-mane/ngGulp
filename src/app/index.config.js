@@ -6,7 +6,7 @@
   .config(config);
 
   /** @ngInject */
-  function config($logProvider, toastrConfig, $translateProvider,tmhDynamicLocaleProvider) {
+  function config($logProvider, toastrConfig, $translateProvider,tmhDynamicLocaleProvider, $provide) {
 
 
     // Register a loader for the static files
@@ -38,6 +38,16 @@
     
     //override the default path for locale files  
     tmhDynamicLocaleProvider.localeLocationPattern('i18n/angular-locale_{{locale}}.js');
+    
+    //To be delete later.
+    $provide.decorator("$sanitize", function($delegate, $log){
+      return function(text, target) {
+        var result = $delegate(text, target);
+        $log.info("$sanitize input: " + text);
+        $log.info("$sanitize output: " + result);
+        return result;
+      };
+    });
   }
 
 })();

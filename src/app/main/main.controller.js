@@ -6,7 +6,7 @@
   .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController(TestCenterService, $log) {
+  function MainController(TestCenterService, $log, $sanitize) {
     var vm = this;
 
     vm.searchObj = {};
@@ -15,6 +15,7 @@
 
     vm.search = function(){
       vm.testCenters = [];
+      vm.searchObj.testId = $sanitize(vm.searchObj.testId);
       TestCenterService.search(vm.searchObj.testId).then(function(testCenters){
         vm.testCenters =  testCenters;
         if(angular.isArray(vm.testCenters)){
