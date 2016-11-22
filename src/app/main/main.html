@@ -31,10 +31,68 @@
         </li>
         <li><a href="contact.html" translate="HOME.CONTACT_US">Contact Us</a></li>
 
-        <li style="margin-top: 1rem;">
+       <!-- <li style="margin-top: 1rem;">
           <button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#LoginModal" translate="HOME.SIGN_IN">Sign in</button>
-        </li> 
+        </li> -->
+           <!-- Login Module  Start-->
+    <li>      
+    <div ng-controller="ModalDemoCtrl as $ctrl" class="modal-demo">
+    <script type="text/ng-template" id="app/components/login/modalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">Login</h3>
+        </div>
+        <form name="loginForm" novalidate>
+        <div class="modal-body" id="modal-body">
+              
+            <div class="error-message" ng-messages="loginForm.username.$error" ng-show="loginForm.username.$invalid && !loginForm.username.$pristine">
+                <div ng-messages-include="app/main/errorMessages.html"></div>
+            </div>
+                    <div class="form-group" >
+                        <input ng-model="username" name="username" type="email" placeholder="Email" class="form-control" required ng-minlength="5">
+                    </div>
+            
+            <div class="error-message" ng-messages="loginForm.password.$error" ng-show="loginForm.password.$invalid && !loginForm.password.$pristine">
+                        <div ng-messages-include="app/main/errorMessages.html"></div>
+            </div> 
+                     <div class="form-group">
+                         <input ng-model="password" type="password" name="password" placeholder="Password" class="form-control" ng-minlength="5" ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{5,}$/" required>
+                      </div>
+                            
+           <!--ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{5,}$/"-->
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="$ctrl.ok(username)" ng-disabled="loginForm.$invalid">Login</button>
+            <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+        </div>
+        </form>
+    </script>
+  <!--  <script type="text/ng-template" id="stackedModal.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title-{{name}}">The {{name}} modal!</h3>
+        </div>
+        <div class="modal-body" id="modal-body-{{name}}">
+            Having multiple modals open at once is probably bad UX but it's technically possible.
+        </div>
+    </script>-->
+    
+    <button type="button" class="btn btn-primary navbar-btn" ng-click="$ctrl.openComponentModal()" translate="HOME.SIGN_IN">Login</button>
+    
+    <div ng-show="$ctrl.selected">Logged in as: {{ $ctrl.selected }}</div>
+        <div ng-show="$ctrl.username">Logged in as: {{username}}</div>
+    <div class="modal-parent">
+    </div>
+    </div>
+    </li>       
+    <!-- Login Module  End-->     
+
       </ul>
+        
+ 
+</div>
+        
+        
+        
+        
       <!-- Stat Search -->
       <!-- <li>
          <span class="search-side" style="margin-top: 0px;">
@@ -47,7 +105,7 @@
       <!-- End Navigation List -->    
 
     </div><!--/.navbar-collapse -->
-  </div>
+  
 </nav>
 
 <!-- Landing page with login screen partial-->
@@ -162,6 +220,7 @@
 
   <!-- This Modal is for Login -->  
 
+<!--
   <div class="modal fade bs-example-modal-sm" role="dialog" id="LoginModal" tabindex="-1">
     <div class="modal-dialog modal-sm" role="document"> 
       <div class="modal-content"> 
@@ -189,3 +248,4 @@
       </div> 
     </div> 
   </div>
+-->

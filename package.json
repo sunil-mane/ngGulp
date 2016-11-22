@@ -1,7 +1,9 @@
 {
   "name": "psi",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "angular-modal-service": "^0.10.1"
+  },
   "scripts": {
     "test": "gulp test"
   },

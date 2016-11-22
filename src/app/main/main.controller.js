@@ -35,5 +35,7 @@
     //initialize date and currency value  
     vm.date = new Date();
     vm.money = 5000;
+    
+  
   }
 })();
